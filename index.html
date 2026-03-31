@@ -7,142 +7,7 @@
     <title>Desafio de Levantamento Terra - Portfólio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
-
-        :root {
-            --primary-green: #2d5a27;
-            --primary-yellow: #fcd116;
-            --dark-bg: #121212;
-        }
-
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: var(--dark-bg);
-            color: #ffffff;
-            scroll-behavior: smooth;
-        }
-
-        h1,
-        h2,
-        h3 {
-            font-family: 'Oswald', sans-serif;
-            text-transform: uppercase;
-        }
-
-        .page-section {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 4rem 1.5rem;
-            border-bottom: 1px solid #333;
-        }
-
-        .logo-container {
-            max-width: 300px;
-            animation: fadeInScale 1.5s ease-out;
-        }
-
-        .card {
-            background: rgba(255, 255, 255, 0.05);
-            border-left: 4px solid var(--primary-yellow);
-            padding: 1.5rem;
-            border-radius: 0.5rem;
-            transition: transform 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        .photo-frame {
-            position: relative;
-            overflow: hidden;
-            border-radius: 10px;
-            border: 2px solid var(--primary-yellow);
-        }
-
-        .photo-label {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 0.5rem;
-            text-align: center;
-            font-weight: bold;
-        }
-
-        .nav-dots {
-            position: fixed;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            z-index: 100;
-        }
-
-        .dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: #444;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .dot.active {
-            background: var(--primary-yellow);
-            transform: scale(1.3);
-        }
-
-        @keyframes fadeInScale {
-            0% {
-                opacity: 0;
-                transform: scale(0.8);
-            }
-
-            100% {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        .btn-cta {
-            background-color: var(--primary-yellow);
-            color: black;
-            font-weight: bold;
-            padding: 1rem 2rem;
-            border-radius: 9999px;
-            transition: all 0.3s;
-            text-transform: uppercase;
-        }
-
-        .btn-cta:hover {
-            background-color: #e5bd12;
-            transform: scale(1.05);
-            box-shadow: 0 0 20px rgba(252, 209, 22, 0.4);
-        }
-
-        .rule-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            margin-bottom: 10px;
-        }
-
-        .valid {
-            color: #4ade80;
-        }
-
-        .invalid {
-            color: #f87171;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -162,7 +27,7 @@
     <!-- PÁGINA 1: CAPA -->
     <section id="capa" class="page-section bg-gradient-to-b from-[#1a2e18] to-black">
         <div class="logo-container mb-8">
-            <img src="DESAFIO TERRA.jpg" alt="Logotipo Desafio Terra"
+            <img src="static/images/logo.png" alt="Logotipo Desafio Terra"
                 class="w-full h-auto drop-shadow-[0_0_25px_rgba(252,209,22,0.3)]">
         </div>
         <h1 class="text-5xl md:text-7xl font-bold text-center mb-2">Desafio de Levantamento Terra</h1>
@@ -184,11 +49,12 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
                 <div class="photo-frame">
-                    <img src="Terra Convencional.jpeg" alt="Terra Convencional" class="w-full h-[400px] object-cover">
+                    <img src="static/images/terra_convencional.jpeg" alt="Terra Convencional"
+                        class="w-full h-[400px] object-cover">
                     <div class="photo-label">TERRA CONVENCIONAL</div>
                 </div>
                 <div class="photo-frame">
-                    <img src="Terra Sumo.jpeg" alt="Terra Sumo" class="w-full h-[400px] object-cover">
+                    <img src="static/images/terra_sumo.jpeg" alt="Terra Sumo" class="w-full h-[400px] object-cover">
                     <div class="photo-label">TERRA SUMÔ</div>
                 </div>
             </div>
@@ -372,29 +238,7 @@
         </div>
     </section>
 
-    <script>
-        // Lógica simples para os pontos de navegação
-        const sections = document.querySelectorAll('.page-section');
-        const dots = document.querySelectorAll('.dot');
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            dots.forEach(dot => {
-                dot.classList.remove('active');
-                if (dot.getAttribute('href').slice(1) === current) {
-                    dot.classList.add('active');
-                }
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
