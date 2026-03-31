@@ -10,6 +10,6 @@ RUN apk --no-cache add ca-certificates
 COPY --from=builder /build/server .
 COPY static ./static
 
-EXPOSE 8080
+EXPOSE 5501
 
 CMD ["./server"]
