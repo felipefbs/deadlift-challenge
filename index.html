@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio de Levantamento Terra - Portfólio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
+
+        :root {
+            --primary-green: #2d5a27;
+            --primary-yellow: #fcd116;
+            --dark-bg: #121212;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--dark-bg);
+            color: #ffffff;
+            scroll-behavior: smooth;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+        }
+
+        .page-section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 4rem 1.5rem;
+            border-bottom: 1px solid #333;
+        }
+
+        .logo-container {
+            max-width: 300px;
+            animation: fadeInScale 1.5s ease-out;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            border-left: 4px solid var(--primary-yellow);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .photo-frame {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            border: 2px solid var(--primary-yellow);
+        }
+
+        .photo-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 0.5rem;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .nav-dots {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 100;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #444;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .dot.active {
+            background: var(--primary-yellow);
+            transform: scale(1.3);
+        }
+
+        @keyframes fadeInScale {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .btn-cta {
+            background-color: var(--primary-yellow);
+            color: black;
+            font-weight: bold;
+            padding: 1rem 2rem;
+            border-radius: 9999px;
+            transition: all 0.3s;
+            text-transform: uppercase;
+        }
+
+        .btn-cta:hover {
+            background-color: #e5bd12;
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(252, 209, 22, 0.4);
+        }
+
+        .rule-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .valid {
+            color: #4ade80;
+        }
+
+        .invalid {
+            color: #f87171;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navegação em Pontos -->
+    <div class="nav-dots">
+        <a href="#capa" class="dot active" title="Capa"></a>
+        <a href="#sobre" class="dot" title="O que é?"></a>
+        <a href="#inscricoes" class="dot" title="Inscrições"></a>
+        <a href="#equipamentos" class="dot" title="Equipamentos"></a>
+        <a href="#regras" class="dot" title="Regras"></a>
+        <a href="#passo-a-passo" class="dot" title="Como se inscrever"></a>
+        <a href="#valores" class="dot" title="Valores"></a>
+        <a href="#contato" class="dot" title="Contato"></a>
+    </div>
+
+    <!-- PÁGINA 1: CAPA -->
+    <section id="capa" class="page-section bg-gradient-to-b from-[#1a2e18] to-black">
+        <div class="logo-container mb-8">
+            <img src="DESAFIO TERRA.jpg" alt="Logotipo Desafio Terra"
+                class="w-full h-auto drop-shadow-[0_0_25px_rgba(252,209,22,0.3)]">
+        </div>
+        <h1 class="text-5xl md:text-7xl font-bold text-center mb-2">Desafio de Levantamento Terra</h1>
+        <p class="text-xl md:text-2xl text-yellow-500 font-semibold mb-8">Campina Grande - Paraíba</p>
+        <div class="flex items-center gap-4 text-lg border-y border-white/20 py-2 px-6">
+            <i class="far fa-calendar-alt text-yellow-500"></i>
+            <span>23 de Maio de 2026</span>
+        </div>
+        <a href="#sobre" class="mt-12 animate-bounce text-3xl">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </section>
+
+    <!-- PÁGINA 2: O QUE É? -->
+    <section id="sobre" class="page-section">
+        <div class="max-w-5xl w-full">
+            <h2 class="text-4xl font-bold mb-8 text-center text-yellow-500">O que é o Levantamento Terra (Deadlift)?
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+                <div class="photo-frame">
+                    <img src="Terra Convencional.jpeg" alt="Terra Convencional" class="w-full h-[400px] object-cover">
+                    <div class="photo-label">TERRA CONVENCIONAL</div>
+                </div>
+                <div class="photo-frame">
+                    <img src="Terra Sumo.jpeg" alt="Terra Sumo" class="w-full h-[400px] object-cover">
+                    <div class="photo-label">TERRA SUMÔ</div>
+                </div>
+            </div>
+
+            <div class="space-y-6 text-lg leading-relaxed text-gray-300">
+                <div class="card">
+                    <h3 class="text-xl font-bold text-white mb-2">A FORÇA BRUTA EM SUA FORMA MAIS PURA</h3>
+                    <p>O Levantamento Terra, também conhecido como Deadlift, é um dos movimentos fundamentais do
+                        Powerlifting e do treinamento de força em geral. É um exercício que recruta uma grande
+                        quantidade de grupos musculares, tornando-o um teste supremo de força corporal total.</p>
+                </div>
+                <div class="card">
+                    <h3 class="text-xl font-bold text-white mb-2">MUITO MAIS QUE APENAS LEVANTAR PESO</h3>
+                    <p>Além de desenvolver força bruta, o Deadlift oferece benefícios incríveis para a população em
+                        geral, com uma transferência direta de força para as atividades diárias. Ele melhora a postura,
+                        fortalece o core e a lombar, e aumenta a potência e a estabilidade.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PÁGINA 3: INSCRIÇÕES -->
+    <section id="inscricoes" class="page-section bg-[#1a2e18]">
+        <div class="text-center">
+            <h2 class="text-6xl font-bold mb-4">INSCRIÇÕES ABERTAS!</h2>
+            <div class="bg-yellow-500 text-black inline-block px-8 py-4 rounded-lg mb-8">
+                <p class="text-xl font-bold uppercase">Prazo Final</p>
+                <p class="text-5xl font-bold">13 DE MAIO</p>
+            </div>
+            <p class="text-2xl mb-10">NÃO PERCA TEMPO!<br>GARANTA SEU LUGAR NO DESAFIO E MOSTRE A SUA FORÇA!</p>
+            <a href="#passo-a-passo" class="btn-cta text-xl">Quero Me Inscrever</a>
+        </div>
+    </section>
+
+    <!-- PÁGINA 4: EQUIPAMENTOS -->
+    <section id="equipamentos" class="page-section">
+        <div class="max-w-4xl w-full">
+            <h2 class="text-4xl font-bold mb-12 text-center text-yellow-500">Equipamentos Necessários</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white/5 p-8 rounded-xl border border-white/10">
+                    <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
+                        <i class="fas fa-check-circle text-green-500"></i> OBRIGATÓRIOS
+                    </h3>
+                    <ul class="space-y-4 text-lg">
+                        <li class="flex items-center gap-3"><i class="fas fa-shoe-prints text-yellow-500"></i>
+                            Sapatilha/tênis de sola plana</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-socks text-yellow-500"></i> Meias de cano
+                            alto (proteção)</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-person-half-dress text-yellow-500"></i>
+                            Short acima do joelho</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-shirt text-yellow-500"></i> Camiseta de
+                            manga</li>
+                    </ul>
+                </div>
+                <div class="bg-white/5 p-8 rounded-xl border border-white/10">
+                    <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
+                        <i class="fas fa-plus-circle text-blue-400"></i> OPCIONAIS
+                    </h3>
+                    <ul class="space-y-4 text-lg">
+                        <li class="flex items-center gap-3"><i class="fas fa-belt text-yellow-500"></i> Cinto de
+                            levantamento</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PÁGINA 5: REGRAS BÁSICAS -->
+    <section id="regras" class="page-section bg-zinc-900">
+        <div class="max-w-4xl w-full">
+            <h2 class="text-4xl font-bold mb-12 text-center text-yellow-500">Regras Básicas do Levantamento</h2>
+            <div class="space-y-8">
+                <div>
+                    <h3 class="text-xl font-bold text-green-500 mb-4 uppercase tracking-widest">O que valida o
+                        levantamento</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="rule-item"><i class="fas fa-check valid"></i> Subir o peso de forma constante</div>
+                        <div class="rule-item"><i class="fas fa-check valid"></i> Sem apoiar na coxa</div>
+                        <div class="rule-item"><i class="fas fa-check valid"></i> Bloqueio de joelhos e quadril</div>
+                        <div class="rule-item"><i class="fas fa-check valid"></i> Ombro atrás da linha da barra</div>
+                        <div class="rule-item"><i class="fas fa-check valid"></i> Sinal do árbitro antes de descer</div>
+                        <div class="rule-item"><i class="fas fa-check valid"></i> Conduzir a barra até o chão</div>
+                    </div>
+                </div>
+
+                <hr class="border-white/10">
+
+                <div>
+                    <h3 class="text-xl font-bold text-red-500 mb-4 uppercase tracking-widest">O que invalida o
+                        levantamento</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="rule-item"><i class="fas fa-times invalid"></i> Não atingir posição ereta</div>
+                        <div class="rule-item"><i class="fas fa-times invalid"></i> Apoiar a barra nas coxas</div>
+                        <div class="rule-item"><i class="fas fa-times invalid"></i> Passo à frente ou atrás</div>
+                        <div class="rule-item"><i class="fas fa-times invalid"></i> Soltar a barra (drop)</div>
+                        <div class="rule-item"><i class="fas fa-times invalid"></i> Barra descer antes do comando</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PÁGINA 6: COMO SE INSCREVER -->
+    <section id="passo-a-passo" class="page-section">
+        <div class="max-w-3xl w-full text-center">
+            <h2 class="text-4xl font-bold mb-12 text-yellow-500">Passo a Passo para Inscrição</h2>
+            <div class="space-y-8 text-left">
+                <div class="flex items-center gap-6 bg-white/5 p-6 rounded-lg">
+                    <span class="text-4xl font-bold text-yellow-500">01</span>
+                    <div>
+                        <h3 class="font-bold text-xl">PREENCHIMENTO DO FORMULÁRIO</h3>
+                        <p class="text-gray-400">Clique no link abaixo e preencha seus dados corretamente.</p>
+                        <a href="#" class="text-yellow-500 underline hover:text-yellow-300">Acessar Formulário de
+                            Inscrição</a>
+                    </div>
+                </div>
+                <div class="flex items-center gap-6 bg-white/5 p-6 rounded-lg">
+                    <span class="text-4xl font-bold text-yellow-500">02</span>
+                    <div>
+                        <h3 class="font-bold text-xl">ENVIO DE COMPROVANTE</h3>
+                        <p class="text-gray-400">Envie o comprovante para Danillo Matheus via WhatsApp: <strong>(83)
+                                99865-2282</strong></p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-6 bg-white/5 p-6 rounded-lg">
+                    <span class="text-4xl font-bold text-yellow-500">03</span>
+                    <div>
+                        <h3 class="font-bold text-xl">CONFIRMAÇÃO</h3>
+                        <p class="text-gray-400">Aguarde o e-mail de confirmação da sua inscrição na nossa lista
+                            oficial.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PÁGINA 7: VALORES -->
+    <section id="valores" class="page-section bg-yellow-500 text-black">
+        <div class="text-center">
+            <h2 class="text-5xl font-bold mb-8 uppercase">Valores e Pagamento</h2>
+            <div class="bg-black text-white p-12 rounded-3xl shadow-2xl mb-8">
+                <p class="text-2xl mb-2">VALOR DA INSCRIÇÃO</p>
+                <p class="text-7xl font-bold">R$ 80,00</p>
+            </div>
+            <div class="bg-white/20 p-6 rounded-xl border-2 border-black/20">
+                <p class="font-bold text-xl mb-2">DADOS PARA PAGAMENTO VIA PIX (CELULAR)</p>
+                <p class="text-3xl font-bold tracking-wider">83998652282</p>
+                <p class="mt-2 opacity-70">Favorecido: Danillo Matheus Duarte Cavalcante</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PÁGINA 8: CONTATO -->
+    <section id="contato" class="page-section">
+        <div class="max-w-4xl w-full text-center">
+            <h2 class="text-4xl font-bold mb-12 text-yellow-500">Dúvidas e Mais Informações</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <a href="tel:83998652282" class="card flex flex-col items-center">
+                    <i class="fas fa-phone text-3xl mb-4 text-yellow-500"></i>
+                    <p class="font-bold">TELEFONE</p>
+                    <p class="text-sm text-gray-400">83 99865-2282</p>
+                </a>
+                <a href="mailto:danillo.cavalcante96@hotmail.com" class="card flex flex-col items-center">
+                    <i class="fas fa-envelope text-3xl mb-4 text-yellow-500"></i>
+                    <p class="font-bold">E-MAIL</p>
+                    <p class="text-sm text-gray-400 break-all">danillo.cavalcante96@hotmail.com</p>
+                </a>
+                <div class="card flex flex-col items-center">
+                    <i class="fas fa-share-nodes text-3xl mb-4 text-yellow-500"></i>
+                    <p class="font-bold">REDES SOCIAIS</p>
+                    <div class="flex flex-col text-sm text-gray-400">
+                        <span>@danillocavalcante</span>
+                        <span>@forjapowerlifting</span>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="mt-24 pt-8 border-t border-white/10 text-gray-500 text-sm">
+                &copy; 2026 DESAFIO TERRA - TODOS OS DIREITOS RESERVADOS
+            </footer>
+        </div>
+    </section>
+
+    <script>
+        // Lógica simples para os pontos de navegação
+        const sections = document.querySelectorAll('.page-section');
+        const dots = document.querySelectorAll('.dot');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            dots.forEach(dot => {
+                dot.classList.remove('active');
+                if (dot.getAttribute('href').slice(1) === current) {
+                    dot.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
