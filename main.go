@@ -10,6 +10,6 @@ func main() {
 	http.Handle("/", fs)
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
 
-	log.Println("Server started on :5501")
+	log.Println("Server started on http://localhost:5501")
 	log.Fatal(http.ListenAndServe(":5501", nil))
 }
