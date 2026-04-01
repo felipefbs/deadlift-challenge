@@ -35,14 +35,14 @@ go build -o server main.go
 ### Opção 3: Docker
 
 ```bash
-docker build -t power-inscriptions .
-docker run -p 5501:5501 power-inscriptions
+docker build -t deadlift-challenge .
+docker run -p 5501:5501 deadlift-challenge
 ```
 
 ## Estrutura do Projeto
 
 ```
-power-inscriptions/
+deadlift-challenge/
 ├── main.go           # Ponto de entrada do servidor Go
 ├── go.mod            # Definição do módulo Go
 ├── Dockerfile        # Build Docker multi-stage
