@@ -239,6 +239,12 @@ hr {
     border: 2px solid var(--primary-yellow);
 }
 
+@media (min-width: 351px) {
+    .photo-frame {
+        aspect-ratio: 4 / 5;
+    }
+}
+
 .photo-label {
     position: absolute;
     bottom: 0;
